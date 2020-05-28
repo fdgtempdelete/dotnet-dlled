@@ -1,0 +1,23 @@
+<html> 
+  <head> 
+    <title>HTA Test
+    </title> 
+    <HTA:APPLICATION ID="objTest" APPLICATIONNAME="HTATest" SCROLL="no" SINGLEINSTANCE="yes" > 
+  </head> 
+<SCRIPT LANGUAGE="VBScript">
+Path = BrowseToFile
+msgboxx= "Path = " & Path
+Function BrowseToFile()
+Set wShell=CreateObject("WScript.Shell")
+  mshtapar="about:<input type=file id=FILE>"_
+   & "<script>FILE.click();"_
+   & "new ActiveXObject('Scripting.FileSystemObject').GetStandardStream(1).WriteLine(FILE.value);"_
+   & "close();"_
+   & "resizeTo(0,0);"_
+   & "<//script>"
+  msgboxy= "param =" & mshtapar
+  Set oExec=wShell.Exec( "mshta.exe " & """" & mshtapar & """")
+End Function
+</SCRIPT>
+  <body>
+  </body>
