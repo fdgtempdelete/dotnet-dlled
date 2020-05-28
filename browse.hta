@@ -1,0 +1,30 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">  
+<script language="vbscript">  
+ 
+
+ 
+Sub openFile
+   CreateObject("WScript.Shell").Run(fileloader.value) 
+End Sub   
+ 
+Sub RunScript  
+  Input_span.innerHTML = fileloader.value  
+End Sub  
+
+ 
+
+ 
+ 
+</script> 
+<hta:application> 
+</head> 
+<body> 
+Browse for file:<br> 
+<input type="file" id="fileloader" onchange="Runscript"</input>  
+<p>Path: <span id="Input_span"></span><p>  
+<button type="button" onclick="openFile">Open</button>
+</body> 
+</html> 
